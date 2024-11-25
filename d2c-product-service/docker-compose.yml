@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  # Spring Boot Application
+  d2c-product-service:
+    image: gradle:8.10-jdk17  # Gradle image with Java 17
+    container_name: d2c-product-service-app
+    working_dir: /app
+    volumes:
+      - .:/app               # Mount project root into container
+    ports:
+      - "9080:9080"
+    command: ./gradlew bootRun  # Command to run the Spring Boot app
+    stdin_open: true
+    tty: true
+    networks:
+      - my-shared-network
+    environment:
+      - SERVICE_NAME=d2c-notification-service
+
+networks:
+  my-shared-network:
+    external: true

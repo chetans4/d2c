@@ -6,6 +6,18 @@ http://localhost:9082/actuator/circuitbreakerevents
 
 - Can plan email trigger from CircuitBreakerEventListener
 
+#### Run docker with non-root user
+> sudo snap services docker
+> sudo groupadd docker
+> sudo usermod -aG docker $(whoami)
+> sudo snap restart docker
+> sudo snap logs docker
+> newgrp docker
+> sudo chown root:docker /var/run/docker.sock
+> sudo chmod 660 /var/run/docker.sock
+> groups
+
+
 #### Build Docker Image
 > sudo docker build -t d2c-payment-service .
 
@@ -77,3 +89,9 @@ http://localhost:9082/actuator/circuitbreakerevents
 
 - Graphs with CPU and Service monitoring:
 ![img.png](https://github.com/chetans4/d2c/blob/master/d2c-payment-service/src/main/resources/static/img-cpu.png)
+
+#### Setting up K8S:
+> minikube start --driver=docker
+> minikube status
+> minikube dashboard
+> 
