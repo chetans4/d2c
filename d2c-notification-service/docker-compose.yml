@@ -22,5 +22,5 @@ services:
       - SERVICE_NAME=d2c-notification-service
 
 networks:
-  my_shared_network:
+  d2c-docker_my_shared_network:
     external: true

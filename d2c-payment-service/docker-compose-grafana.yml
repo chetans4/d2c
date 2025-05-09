@@ -7,10 +7,10 @@ services:
     container_name: grafana
     network_mode: "host"
     volumes:
-      - /mnt/d/self/d2c/d2c-payment-service/docker/data/grafana_data:/var/lib/grafana        # Persist data
-      - /mnt/d/self/d2c/d2c-payment-service/docker/data/grafana_config:/etc/grafana          # External configuration
-      - /mnt/d/self/d2c/d2c-payment-service/docker/data/grafana_plugins:/var/lib/grafana/plugins  # Plugins
-      - /mnt/d/self/d2c/d2c-payment-service/docker/data/grafana_logs:/var/log/grafana        # Access logs
+      - /mnt/c/code/d2c-docker/d2c-payment-service/docker/data/grafana_data:/var/lib/grafana        # Persist data
+      - /mnt/c/code/d2c-docker/d2c-payment-service/docker/data/grafana_config:/etc/grafana          # External configuration
+      - /mnt/c/code/d2c-docker/d2c-payment-service/docker/data/grafana_plugins:/var/lib/grafana/plugins  # Plugins
+      - /mnt/c/code/d2c-docker/d2c-payment-service/docker/data/grafana_logs:/var/log/grafana        # Access logs
     env_file:
       - ./docker/grafana.env
 
